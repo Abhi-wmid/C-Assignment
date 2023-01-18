@@ -1,0 +1,15 @@
+// C program to demonstrate
+// example of tolower() function.
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+
+// convert 'M' to lowercase
+char ch = tolower('M');
+
+// Printing the lowercase letter
+printf("%c", ch);
+
+return 0;
+}
