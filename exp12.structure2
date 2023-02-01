@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+struct student {
+    char name[30];
+    int age;
+    int semester;
+    float marks;
+};
+
+int main() {
+    struct student s[10];
+    struct student *p, *highest = &s[0];
+    int i;
+    
+    for (i = 0; i < 10; i++) {
+        printf("Enter the name of student %d: ", i + 1);
+        scanf("%s", s[i].name);
+        printf("Enter the age of student %d: ", i + 1);
+        scanf("%d", &s[i].age);
+        printf("Enter the semester of student %d: ", i + 1);
+        scanf("%d", &s[i].semester);
+        printf("Enter the marks of student %d: ", i + 1);
+        scanf("%f", &s[i].marks);
+    }
+    
+    for (p = &s[0]; p < &s[10]; p++) {
+        if (p->marks > highest->marks) {
+            highest = p;
+        }
+    }
+    
+    printf("\nThe student with the highest marks is: %s\n", highest->name);
+    
+    return 0;
+}
